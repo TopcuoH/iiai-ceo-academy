@@ -1,0 +1,14 @@
+{
+  "name": "Perm Work — где работать в Перми",
+  "short_name": "Perm Work",
+  "description": "Карта и каталог рабочих мест для самозанятых, фрилансеров и предпринимателей Перми.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f8fc",
+  "theme_color": "#6558f5",
+  "lang": "ru",
+  "icons": [
+    {"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}

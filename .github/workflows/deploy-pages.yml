@@ -24,6 +24,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate Perm Work catalog
+        shell: bash
+        run: |
+          node --check perm-workspaces/data.js
+          node --check perm-workspaces/app.js
+          if grep -R "Яблочкова" perm-workspaces; then
+            echo "Old location binding found in Perm Work catalog"
+            exit 1
+          fi
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 

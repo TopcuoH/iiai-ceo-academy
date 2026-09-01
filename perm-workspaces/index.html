@@ -4,60 +4,134 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <meta content="#f7f8fc" name="theme-color"/>
-<title>Рабочие места в Перми — от Яблочкова, 3</title>
-<meta content="Бесплатные и недорогие места для работы с ноутбуком в Перми: Wi‑Fi, розетки, цены, телефоны, адреса, фото и маршруты от ул. Яблочкова, 3." name="description"/>
+<title>Где работать в Перми — каталог для самозанятых</title>
+<meta content="Большой каталог мест для работы в Перми: коворкинги, нетворкинг-пространства, кафе, библиотеки и общественные места. Wi‑Fi, розетки, цены, районы, телефоны, фото и Яндекс Карты." name="description"/>
 <link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="wrap">
 <header class="brandbar">
-  <div class="brand" aria-label="IIAI Perm Workspaces">
+  <a class="brand" href="#top" aria-label="IIAI Perm Workspaces">
     <div class="brandMark">II</div>
     <div class="brandText">iiai.pro <span>/ Perm Work</span></div>
-  </div>
-  <div class="brandMeta">обновлено · 01.09.2026</div>
+  </a>
+  <div class="brandMeta">городской справочник · 01.09.2026</div>
 </header>
-<section class="hero">
-<div class="heroBox">
-<div class="kicker">Пермь · рабочие места с ноутбуком</div>
-<h1>Где поработать рядом с Яблочкова, 3</h1>
-<p>Бесплатные и недорогие места с акцентом на <strong>Wi‑Fi + розетку 220 В</strong>. Карточки отсортированы по удалённости. Для каждого места есть фото, кликабельный адрес, телефон и готовый маршрут от Яблочкова, 3.</p>
-<a class="origin" href="https://yandex.ru/maps/?text=%D0%9F%D0%B5%D1%80%D0%BC%D1%8C%2C%20%D1%83%D0%BB.%20%D0%AF%D0%B1%D0%BB%D0%BE%D1%87%D0%BA%D0%BE%D0%B2%D0%B0%2C%203" rel="noopener" target="_blank">⌖ Точка отсчёта: Яблочкова, 3 → Яндекс Карты</a>
-<div class="summary">
-<div class="stat"><b id="activeCount">0</b><span>активных вариантов</span></div>
-<div class="stat"><b id="confirmedCount">0</b><span>Wi‑Fi + розетка подтверждены</span></div>
-<div class="stat"><b id="budgetCount">0</b><span>можно уложиться до 300 ₽</span></div>
-<div class="stat"><b>4.9 км</b><span>до лучшего бесплатного варианта</span></div>
-</div>
-</div>
+
+<section class="hero" id="top">
+  <div class="heroBox">
+    <div class="kicker">Пермь · работа · самозанятые · предприниматели</div>
+    <h1>Где работать<br/>в Перми</h1>
+    <p>Городской каталог для тех, кому нужен стол на час, тихая библиотека, кофейня с ноутбуком, полноценный коворкинг, кабинет для клиента или место, где можно познакомиться с предпринимателями. <strong>Без привязки к одному району.</strong></p>
+    <div class="heroActions">
+      <a class="heroAction primaryHero" href="#catalog">Смотреть все места ↓</a>
+      <a class="heroAction" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%BA%D0%BE%D0%B2%D0%BE%D1%80%D0%BA%D0%B8%D0%BD%D0%B3%20%D0%9F%D0%B5%D1%80%D0%BC%D1%8C">Открыть Пермь в Яндекс Картах ↗</a>
+    </div>
+    <div class="summary">
+      <div class="stat"><b id="totalCount">0</b><span>мест в каталоге</span></div>
+      <div class="stat"><b id="freeCount">0</b><span>бесплатно / по условиям</span></div>
+      <div class="stat"><b id="coffeeCount">0</b><span>кафе и формат «за кофе»</span></div>
+      <div class="stat"><b id="libraryCount">0</b><span>библиотек</span></div>
+      <div class="stat"><b id="districtCount">0</b><span>районов и территорий</span></div>
+    </div>
+  </div>
 </section>
-<div class="toolbar">
-<div class="toolbarInner">
-<button class="filter active" data-filter="all">Все</button>
-<button class="filter" data-filter="confirmed">✓ Wi‑Fi + розетка</button>
-<button class="filter" data-filter="budget">≤ 300 ₽</button>
-<button class="filter" data-filter="free">0 ₽ / бесплатно</button>
-<button class="filter" data-filter="uncertain">⚠ Уточнить</button>
-<input class="search" id="search" placeholder="Поиск по названию или адресу…" inputmode="search"/>
-</div>
-</div>
-<div class="note"><strong>Как читать статусы:</strong> «подтверждено» означает, что Wi‑Fi/розетки прямо указаны в карточке организации, на сайте или в актуальных отзывах. У сетевых точек оснащение может отличаться по филиалам, поэтому сомнительные параметры отмечены отдельно. Цены и режим работы могут меняться — телефон в каждой карточке нажимается напрямую.</div>
-<main class="list" id="list"></main>
-<div class="empty" id="empty">По выбранному фильтру ничего не найдено.</div>
-<section class="closedSection">
-<h2>Не ехать — закрыто</h2>
-<div class="closedCard">
-<div><strong>«Здесь и Сейчас» — Комсомольский проспект, 27</strong><span>Коворкинг отображается как закрытый. Оставлен здесь, чтобы не тратить время на поездку.</span></div>
-<a href="https://yandex.ru/maps/?text=%D0%9F%D0%B5%D1%80%D0%BC%D1%8C%2C%20%D0%9A%D0%BE%D0%BC%D1%81%D0%BE%D0%BC%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%2027" rel="noopener" target="_blank">Посмотреть на карте</a>
-</div>
-<div class="closedCard" style="margin-top:10px">
-<div><strong>«Жизньмарт» — Николая Островского, 74</strong><span>В актуальной карточке Яндекс отмечен как закрытый. В старых списках сети адрес ещё встречается.</span></div>
-<a href="https://yandex.ru/maps/?text=%D0%9F%D0%B5%D1%80%D0%BC%D1%8C%2C%20%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D1%8F%20%D0%9E%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%2C%2074" rel="noopener" target="_blank">Посмотреть на карте</a>
-</div>
+
+<section class="guideIntro">
+  <div>
+    <span class="eyebrow">Не просто список</span>
+    <h2>Выбери место под задачу</h2>
+  </div>
+  <p>В каталоге разделены реальные рабочие форматы: от бесплатного читального зала до кабинета психолога и технологического коворкинга. Статусы Wi‑Fi и розеток показывают уровень подтверждения, а не предположение.</p>
 </section>
+
+<section class="catalogShell" id="catalog">
+  <div class="tabs" id="categoryTabs" aria-label="Категории">
+    <button class="tab active" data-category="all">Все места <span id="tab-all"></span></button>
+    <button class="tab" data-category="coworking">Коворкинги <span id="tab-coworking"></span></button>
+    <button class="tab" data-category="networking">Нетворкинг <span id="tab-networking"></span></button>
+    <button class="tab" data-category="cafe">Кафе <span id="tab-cafe"></span></button>
+    <button class="tab" data-category="library">Библиотеки <span id="tab-library"></span></button>
+    <button class="tab" data-category="public">Другие <span id="tab-public"></span></button>
+  </div>
+
+  <div class="filtersPanel">
+    <div class="filterBlock districtsBlock">
+      <div class="filterLabel">Район</div>
+      <div class="chips" id="districtChips"></div>
+    </div>
+    <div class="filterBlock">
+      <div class="filterLabel">Оплата</div>
+      <div class="chips" id="priceChips">
+        <button class="chip active" data-price="all">Любая</button>
+        <button class="chip" data-price="free">Бесплатно</button>
+        <button class="chip" data-price="coffee">За кофе</button>
+        <button class="chip" data-price="paid">Платно</button>
+        <button class="chip" data-price="conditions">По условиям</button>
+      </div>
+    </div>
+    <div class="filterBlock quickBlock">
+      <div class="filterLabel">Что важно</div>
+      <div class="chips">
+        <button class="chip toggle" data-toggle="wifi">📶 Wi‑Fi подтверждён</button>
+        <button class="chip toggle" data-toggle="power">🔌 Розетки подтверждены</button>
+        <button class="chip toggle" data-toggle="day">💻 На весь день</button>
+        <button class="chip toggle" data-toggle="budget">≤ 300 ₽</button>
+      </div>
+    </div>
+    <div class="searchRow">
+      <div class="searchBox"><span>⌕</span><input class="search" id="search" placeholder="Название, улица, район, формат…" inputmode="search"/></div>
+      <select class="sort" id="sort" aria-label="Сортировка">
+        <option value="recommended">Сначала лучшие</option>
+        <option value="price">Сначала дешевле</option>
+        <option value="district">По районам</option>
+        <option value="name">По названию</option>
+      </select>
+      <button class="reset" id="reset">Сбросить</button>
+    </div>
+  </div>
+
+  <div class="resultsHead">
+    <div><b id="shownCount">0</b> <span>подходящих мест</span></div>
+    <div class="reliability"><i class="rHigh"></i> подтверждено <i class="rMed"></i> частично <i class="rLow"></i> уточнить</div>
+  </div>
+  <main class="list" id="list"></main>
+  <div class="empty" id="empty"><b>Ничего не найдено</b><span>Попробуй убрать один из фильтров или выбрать «Все районы».</span></div>
+</section>
+
+<section class="methodology" id="methodology">
+  <div class="methodCard big">
+    <span class="eyebrow">Как собран каталог</span>
+    <h2>Полнота без ложной точности</h2>
+    <p>Мы проверяем не просто наличие кафе на карте, а <strong>пригодность для работы</strong>: явную отметку «можно с ноутбуком», рабочий формат, читальный зал, коворкинг, профессиональный кабинет или пространство для встреч. Для параметров, которые нельзя подтвердить открытым источником, стоит статус «уточнить».</p>
+  </div>
+  <div class="methodCard">
+    <b>📶 Wi‑Fi</b>
+    <p>«Подтверждён» — указан площадкой, картами или актуальными отзывами. «Вероятно» — типовая инфраструктура формата, но без прямого подтверждения конкретной точки.</p>
+  </div>
+  <div class="methodCard">
+    <b>🔌 Розетки</b>
+    <p>Не переносим наличие розеток с одного филиала сети на другой. Для обычных библиотек и кафе параметр помечен осторожно.</p>
+  </div>
+  <div class="methodCard">
+    <b>💳 Цены</b>
+    <p>Это ориентиры на дату проверки. «За кофе» означает, что отдельной аренды рабочего места нет, а расход — заказ в заведении.</p>
+  </div>
+  <div class="methodCard">
+    <b>📷 Фото</b>
+    <p>Если надёжное прямое фото конкретного пространства найдено — оно показано в карточке. Иначе кнопка ведёт к актуальным фото именно этой точки в Яндекс Картах.</p>
+  </div>
+</section>
+
+<section class="updateBox">
+  <div><span class="eyebrow">Каталог живой</span><h2>Знаешь место, которого здесь нет?</h2><p>Открытия, тарифы и режимы меняются. Можно сообщить новое место или поправку через GitHub — так каталог останется полезным для всех самозанятых Перми.</p></div>
+  <a target="_blank" rel="noopener" href="https://github.com/TopcuoH/iiai-ceo-academy/issues/new?title=%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20Perm%20Work&body=%D0%9C%D0%B5%D1%81%D1%82%D0%BE%3A%0A%D0%90%D0%B4%D1%80%D0%B5%D1%81%3A%0A%D0%A7%D1%82%D0%BE%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D0%BB%D0%BE%D1%81%D1%8C%3A">Предложить место ↗</a>
+</section>
+
 <footer>
-Проверено и собрано 1 сентября 2026 г. · Расстояния приблизительные, от ул. Яблочкова, 3.<br/>
-<div class="legend"><span class="dot">подтверждено</span><span class="dot warn">нужно уточнить</span></div>
+  <b>Perm Work · iiai.pro</b><br/>
+  Данные собраны из официальных сайтов площадок, городских/краевых ресурсов, 2ГИС, Яндекс Карт, Culture.ru и профильных каталогов. Проверено 1 сентября 2026 г.<br/>
+  Районы определены по адресам; для пограничных адресов возможна корректировка. Перед поездкой на весь день рекомендуем проверить режим и наличие свободного места.
 </footer>
 </div>
 <script defer src="data.js"></script>

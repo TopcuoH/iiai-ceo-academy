@@ -129,8 +129,10 @@ function waitForUserPosition(attempt=0){
   if(v2State.userPos){resetRoadRoutesIfNeeded();paintRoadStatus();scheduleRoadRoutes(50);return}
   if(attempt<48)setTimeout(()=>waitForUserPosition(attempt+1),250);
 }
-
-document.addEventListener('DOMContentLoaded',()=>{
+function initRoadRouting(){
   paintRoadStatus();
   document.getElementById('nearBtn')?.addEventListener('click',()=>waitForUserPosition());
-});
+  if(v2State.userPos)scheduleRoadRoutes(80);
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initRoadRouting);
+else initRoadRouting();

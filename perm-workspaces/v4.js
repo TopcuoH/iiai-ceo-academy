@@ -105,3 +105,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   patchAddressLabels();
   const list=document.getElementById('list');if(list)navObserver.observe(list,{childList:true,subtree:true});
 });
+
+// Загружаем отдельный слой расчёта автомобильных маршрутов после навигационных deep-link'ов.
+(()=>{const s=document.createElement('script');s.src='v5.js';s.async=true;document.head.appendChild(s)})();

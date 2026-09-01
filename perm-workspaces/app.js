@@ -84,14 +84,13 @@ function buildDistricts(){
   const root=document.getElementById('districtChips');
   const present=new Set(places.map(p=>p.district));
   const districts=DISTRICT_ORDER.filter(d=>present.has(d));
-  root.innerHTML=`<button class="chip active" data-district="all">Все районы</button>`+districts.map(d=>`<button class="chip" data-district="${safeText(d)}">${safeText(d)} <span>${places.filter(p=>p.district===d).length}</span></button>`).join('');
+  root.innerHTML=`<button class="chip active" data-district="all">Все районы <span>${places.length}</span></button>`+districts.map(d=>`<button class="chip" data-district="${safeText(d)}">${safeText(d)} <span>${places.filter(p=>p.district===d).length}</span></button>`).join('');
   root.querySelectorAll('[data-district]').forEach(b=>b.addEventListener('click',()=>{
     root.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');state.district=b.dataset.district;render();
   }));
 }
-function matches(p){
+function matchesWithoutDistrict(p){
   if(state.category!=='all'&&p.category!==state.category)return false;
-  if(state.district!=='all'&&p.district!==state.district)return false;
   if(state.price!=='all'&&p.priceType!==state.price)return false;
   if(state.toggles.has('wifi')&&p.wifi!=='yes')return false;
   if(state.toggles.has('power')&&p.power!=='yes')return false;
@@ -103,6 +102,25 @@ function matches(p){
   }
   return true;
 }
+function matches(p){
+  if(!matchesWithoutDistrict(p))return false;
+  if(state.district!=='all'&&p.district!==state.district)return false;
+  return true;
+}
+function updateDistrictCounts(){
+  const root=document.getElementById('districtChips');
+  if(!root)return;
+  const eligible=places.filter(matchesWithoutDistrict);
+  root.querySelectorAll('[data-district]').forEach(button=>{
+    const district=button.dataset.district;
+    const count=district==='all'?eligible.length:eligible.filter(p=>p.district===district).length;
+    let counter=button.querySelector('span');
+    if(!counter){counter=document.createElement('span');button.appendChild(counter)}
+    counter.textContent=count;
+    button.classList.toggle('zero',count===0);
+    button.setAttribute('aria-label',district==='all'?`Все районы: ${count} мест`:`${district}: ${count} мест`);
+  });
+}
 function sortItems(items){
   const copy=[...items];
   if(state.sort==='price')return copy.sort((a,b)=>(a.priceValue??9999)-(b.priceValue??9999)||(b.score||0)-(a.score||0));
@@ -111,6 +129,7 @@ function sortItems(items){
   return copy.sort((a,b)=>(b.score||0)-(a.score||0)||a.name.localeCompare(b.name,'ru'));
 }
 function render(){
+  updateDistrictCounts();
   const list=document.getElementById('list');
   const empty=document.getElementById('empty');
   const items=sortItems(places.filter(matches));

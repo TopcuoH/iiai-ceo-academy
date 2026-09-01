@@ -3,47 +3,41 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
-<meta content="#f7f8fc" name="theme-color"/>
-<title>Где работать в Перми — каталог для самозанятых</title>
-<meta content="Большой каталог мест для работы в Перми: коворкинги, нетворкинг-пространства, кафе, библиотеки и общественные места. Wi‑Fi, розетки, цены, районы, телефоны, фото и Яндекс Карты." name="description"/>
+<meta content="#6558f5" name="theme-color"/>
+<title>Где работать в Перми — карта для самозанятых</title>
+<meta content="Интерактивная карта и каталог мест для работы в Перми: коворкинги, кафе, библиотеки, нетворкинг, события, Wi‑Fi, розетки, цены, отзывы, избранное и сравнение." name="description"/>
+<link rel="manifest" href="manifest.webmanifest"/>
+<link rel="icon" href="icon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3ynIkk1AQOQ1IwaLk5rTQnS3pZx2w=" crossorigin=""/>
 <link href="styles.css" rel="stylesheet"/>
+<link href="v2.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="wrap">
 <header class="brandbar">
-  <a class="brand" href="#top" aria-label="IIAI Perm Workspaces">
-    <div class="brandMark">II</div>
-    <div class="brandText">iiai.pro <span>/ Perm Work</span></div>
-  </a>
-  <div class="brandMeta">городской справочник · 01.09.2026</div>
+  <a class="brand" href="#top" aria-label="IIAI Perm Workspaces"><div class="brandMark">II</div><div class="brandText">iiai.pro <span>/ Perm Work</span></div></a>
+  <div class="brandMeta">городской сервис · обновляется ежедневно</div>
 </header>
 
-<section class="hero" id="top">
-  <div class="heroBox">
-    <div class="kicker">Пермь · работа · самозанятые · предприниматели</div>
-    <h1>Где работать<br/>в Перми</h1>
-    <p>Городской каталог для тех, кому нужен стол на час, тихая библиотека, кофейня с ноутбуком, полноценный коворкинг, кабинет для клиента или место, где можно познакомиться с предпринимателями. <strong>Без привязки к одному району.</strong></p>
-    <div class="heroActions">
-      <a class="heroAction primaryHero" href="#catalog">Смотреть все места ↓</a>
-      <a class="heroAction" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%BA%D0%BE%D0%B2%D0%BE%D1%80%D0%BA%D0%B8%D0%BD%D0%B3%20%D0%9F%D0%B5%D1%80%D0%BC%D1%8C">Открыть Пермь в Яндекс Картах ↗</a>
-    </div>
-    <div class="summary">
-      <div class="stat"><b id="totalCount">0</b><span>мест в каталоге</span></div>
-      <div class="stat"><b id="freeCount">0</b><span>бесплатно / по условиям</span></div>
-      <div class="stat"><b id="coffeeCount">0</b><span>кафе и формат «за кофе»</span></div>
-      <div class="stat"><b id="libraryCount">0</b><span>библиотек</span></div>
-      <div class="stat"><b id="districtCount">0</b><span>районов и территорий</span></div>
-    </div>
+<section class="hero" id="top"><div class="heroBox">
+  <div class="kicker">Пермь · работа · самозанятые · предприниматели</div>
+  <h1>Где работать<br/>в Перми</h1>
+  <p>Карта рабочих мест для самозанятых, фрилансеров и предпринимателей: <strong>бесплатно, за кофе или платно</strong>. Коворкинги, кафе, библиотеки, кабинеты, нетворкинг и деловые события — с честными статусами Wi‑Fi, розеток и свежести данных.</p>
+  <div class="heroActions">
+    <a class="heroAction primaryHero" href="#catalog">Найти место ↓</a>
+    <button class="heroAction nearBtn" id="nearBtn" type="button">⌖ Рядом со мной</button>
+    <button class="heroAction installBtn hidden" id="installBtn" type="button">＋ Установить как приложение</button>
   </div>
-</section>
+  <div class="summary">
+    <div class="stat"><b id="totalCount">0</b><span>мест в каталоге</span></div>
+    <div class="stat"><b id="freeCount">0</b><span>бесплатно / по условиям</span></div>
+    <div class="stat"><b id="coffeeCount">0</b><span>кафе и «за кофе»</span></div>
+    <div class="stat"><b id="libraryCount">0</b><span>библиотек</span></div>
+    <div class="stat"><b id="districtCount">0</b><span>районов и территорий</span></div>
+  </div>
+</div></section>
 
-<section class="guideIntro">
-  <div>
-    <span class="eyebrow">Не просто список</span>
-    <h2>Выбери место под задачу</h2>
-  </div>
-  <p>В каталоге разделены реальные рабочие форматы: от бесплатного читального зала до кабинета психолога и технологического коворкинга. Статусы Wi‑Fi и розеток показывают уровень подтверждения, а не предположение.</p>
-</section>
+<section class="guideIntro"><div><span class="eyebrow">Не просто список</span><h2>Выбери место под задачу</h2></div><p>Фильтры работают вместе: район, формат, цена, Wi‑Fi, розетки, длительность и «открыто сейчас». Цифры у районов пересчитываются под выбранные условия. Геолокация включается только после твоего разрешения.</p></section>
 
 <section class="catalogShell" id="catalog">
   <div class="tabs" id="categoryTabs" aria-label="Категории">
@@ -56,85 +50,59 @@
   </div>
 
   <div class="filtersPanel">
-    <div class="filterBlock districtsBlock">
-      <div class="filterLabel">Район</div>
-      <div class="chips" id="districtChips"></div>
-    </div>
-    <div class="filterBlock">
-      <div class="filterLabel">Оплата</div>
-      <div class="chips" id="priceChips">
-        <button class="chip active" data-price="all">Любая</button>
-        <button class="chip" data-price="free">Бесплатно</button>
-        <button class="chip" data-price="coffee">За кофе</button>
-        <button class="chip" data-price="paid">Платно</button>
-        <button class="chip" data-price="conditions">По условиям</button>
-      </div>
-    </div>
-    <div class="filterBlock quickBlock">
-      <div class="filterLabel">Что важно</div>
-      <div class="chips">
-        <button class="chip toggle" data-toggle="wifi">📶 Wi‑Fi подтверждён</button>
-        <button class="chip toggle" data-toggle="power">🔌 Розетки подтверждены</button>
-        <button class="chip toggle" data-toggle="day">💻 На весь день</button>
-        <button class="chip toggle" data-toggle="budget">≤ 300 ₽</button>
-      </div>
-    </div>
+    <div class="filterBlock districtsBlock"><div class="filterLabel">Район</div><div class="chips" id="districtChips"></div></div>
+    <div class="filterBlock"><div class="filterLabel">Оплата</div><div class="chips" id="priceChips">
+      <button class="chip active" data-price="all">Любая</button><button class="chip" data-price="free">Бесплатно</button><button class="chip" data-price="coffee">За кофе</button><button class="chip" data-price="paid">Платно</button><button class="chip" data-price="conditions">По условиям</button>
+    </div></div>
+    <div class="filterBlock quickBlock"><div class="filterLabel">Что важно</div><div class="chips">
+      <button class="chip toggle" data-toggle="wifi">📶 Wi‑Fi подтверждён</button><button class="chip toggle" data-toggle="power">🔌 Розетки подтверждены</button><button class="chip toggle" data-toggle="day">💻 На весь день</button><button class="chip toggle" data-toggle="budget">≤ 300 ₽</button><button class="chip openNowBtn" id="openNowBtn" type="button">● Открыто сейчас</button>
+    </div></div>
     <div class="searchRow">
       <div class="searchBox"><span>⌕</span><input class="search" id="search" placeholder="Название, улица, район, формат…" inputmode="search"/></div>
-      <select class="sort" id="sort" aria-label="Сортировка">
-        <option value="recommended">Сначала лучшие</option>
-        <option value="price">Сначала дешевле</option>
-        <option value="district">По районам</option>
-        <option value="name">По названию</option>
-      </select>
+      <select class="sort" id="sort" aria-label="Сортировка"><option value="recommended">Сначала лучшие</option><option value="price">Сначала дешевле</option><option value="district">По районам</option><option value="name">По названию</option></select>
       <button class="reset" id="reset">Сбросить</button>
     </div>
   </div>
 
   <div class="resultsHead">
     <div><b id="shownCount">0</b> <span>подходящих мест</span></div>
-    <div class="reliability"><i class="rHigh"></i> подтверждено <i class="rMed"></i> частично <i class="rLow"></i> уточнить</div>
+    <div class="resultsHeadRight">
+      <div class="reliability"><i class="rHigh"></i> подтверждено <i class="rMed"></i> частично <i class="rLow"></i> уточнить</div>
+      <span class="geoStatus" id="geoStatus">Можно включить «Рядом со мной» для сортировки по расстоянию.</span>
+      <div class="viewSwitch"><button class="viewBtn active" data-view="list">☷ Список</button><button class="viewBtn" data-view="map">⌖ Карта</button></div>
+    </div>
   </div>
+
+  <div class="mapPanel" id="mapPanel"><div class="mapTop"><div><b>Интерактивная карта Perm Work</b><div id="mapCount">Точки загружаются по мере проверки координат</div></div><span>🟢 бесплатно · 🟠 за кофе · 🟣 платно · ⚪ условия</span></div><div class="mapLoading hidden" id="mapLoading">Загружаю точки…</div><div id="workMap"></div></div>
   <main class="list" id="list"></main>
   <div class="empty" id="empty"><b>Ничего не найдено</b><span>Попробуй убрать один из фильтров или выбрать «Все районы».</span></div>
 </section>
 
+<section class="eventsSection" id="events"><div class="sectionHead"><div><span class="eyebrow">Куда пойти знакомиться</span><h2>Бизнес-события и нетворкинг</h2></div><p>Ближайшие подтверждённые события Перми: деловые встречи, B2B, завтраки и нетворкинг. Даты и регистрация ведут на источник организатора.</p></div><div class="eventsGrid" id="eventsGrid"></div></section>
+
+<section class="resourcesSection" id="useful"><div class="sectionHead"><div><span class="eyebrow">Для самозанятых</span><h2>Полезные сервисы и поддержка</h2></div><p>Где получить консультацию, найти меры поддержки, B2B-встречи, события, официальную информацию по НПД и сервисы для малого бизнеса.</p></div><div class="resourcesGrid" id="resourcesGrid"></div></section>
+
 <section class="methodology" id="methodology">
-  <div class="methodCard big">
-    <span class="eyebrow">Как собран каталог</span>
-    <h2>Полнота без ложной точности</h2>
-    <p>Мы проверяем не просто наличие кафе на карте, а <strong>пригодность для работы</strong>: явную отметку «можно с ноутбуком», рабочий формат, читальный зал, коворкинг, профессиональный кабинет или пространство для встреч. Для параметров, которые нельзя подтвердить открытым источником, стоит статус «уточнить».</p>
-  </div>
-  <div class="methodCard">
-    <b>📶 Wi‑Fi</b>
-    <p>«Подтверждён» — указан площадкой, картами или актуальными отзывами. «Вероятно» — типовая инфраструктура формата, но без прямого подтверждения конкретной точки.</p>
-  </div>
-  <div class="methodCard">
-    <b>🔌 Розетки</b>
-    <p>Не переносим наличие розеток с одного филиала сети на другой. Для обычных библиотек и кафе параметр помечен осторожно.</p>
-  </div>
-  <div class="methodCard">
-    <b>💳 Цены</b>
-    <p>Это ориентиры на дату проверки. «За кофе» означает, что отдельной аренды рабочего места нет, а расход — заказ в заведении.</p>
-  </div>
-  <div class="methodCard">
-    <b>📷 Фото</b>
-    <p>Если надёжное прямое фото конкретного пространства найдено — оно показано в карточке. Иначе кнопка ведёт к актуальным фото именно этой точки в Яндекс Картах.</p>
-  </div>
+  <div class="methodCard big"><span class="eyebrow">Как собран каталог</span><h2>Полнота без ложной точности</h2><p>Мы проверяем пригодность для работы: рабочий формат, читальный зал, коворкинг, кабинет, место для встреч или явную возможность работать с ноутбуком. Неподтверждённые параметры не выдаются за факт.</p></div>
+  <div class="methodCard"><b>📶 Wi‑Fi</b><p>«Подтверждён» — указан площадкой, картами или актуальными отзывами. Иначе помечается осторожно.</p></div>
+  <div class="methodCard"><b>🔌 Розетки</b><p>Не переносим наличие розеток с одного филиала сети на другой.</p></div>
+  <div class="methodCard"><b>🟢 Свежесть</b><p>У каждой карточки есть дата проверки. Чем свежее подтверждение, тем выше доверие к условиям.</p></div>
+  <div class="methodCard"><b>👥 Сообщество</b><p>Отзывы, «Я здесь» и исправления можно отправлять на модерацию. Локальные данные сохраняются на устройстве.</p></div>
 </section>
 
-<section class="updateBox">
-  <div><span class="eyebrow">Каталог живой</span><h2>Знаешь место, которого здесь нет?</h2><p>Открытия, тарифы и режимы меняются. Можно сообщить новое место или поправку через GitHub — так каталог останется полезным для всех самозанятых Перми.</p></div>
-  <a target="_blank" rel="noopener" href="https://github.com/TopcuoH/iiai-ceo-academy/issues/new?title=%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20Perm%20Work&body=%D0%9C%D0%B5%D1%81%D1%82%D0%BE%3A%0A%D0%90%D0%B4%D1%80%D0%B5%D1%81%3A%0A%D0%A7%D1%82%D0%BE%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D0%BB%D0%BE%D1%81%D1%8C%3A">Предложить место ↗</a>
-</section>
+<section class="updateBox"><div><span class="eyebrow">Каталог живой</span><h2>Помоги сделать карту точнее</h2><p>В карточке каждого места теперь есть «Я здесь», отзыв и «Исправить». Так можно подтвердить Wi‑Fi, розетки, открытие, новый тариф или добавить информацию.</p></div><a target="_blank" rel="noopener" href="https://github.com/TopcuoH/iiai-ceo-academy/issues/new?title=%D0%9D%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20Perm%20Work">Предложить новое место ↗</a></section>
 
-<footer>
-  <b>Perm Work · iiai.pro</b><br/>
-  Данные собраны из официальных сайтов площадок, городских/краевых ресурсов, 2ГИС, Яндекс Карт, Culture.ru и профильных каталогов. Проверено 1 сентября 2026 г.<br/>
-  Районы определены по адресам; для пограничных адресов возможна корректировка. Перед поездкой на весь день рекомендуем проверить режим и наличие свободного места.
-</footer>
+<footer><b>Perm Work · iiai.pro</b><br/>Каталог обновляется ежедневно по открытым источникам и подтверждениям сообщества. Последняя базовая ревизия: 1 сентября 2026 г.<br/>«Открыто сейчас» работает только там, где удалось структурировать режим работы; если график не подтверждён, место не выдаётся как гарантированно открыто.</footer>
 </div>
+
+<div class="compareTray" id="compareTray"><span>В сравнении: <b>0</b> · максимум 4 места</span><div><button class="compareClear" id="compareClear">Очистить</button><button class="compareOpen" id="compareOpen">Сравнить</button></div></div>
+<div class="overlay" id="v2Overlay"><div class="modal"><div class="modalHead"><h3>Perm Work</h3><button class="modalClose" aria-label="Закрыть">×</button></div><div class="modalBody"></div></div></div>
+<div class="pwaHint" id="pwaHint"><b>Установить Perm Work</b><p>На Android: меню браузера → «Установить приложение» / «Добавить на главный экран». На iPhone: Поделиться → «На экран Домой».</p><button id="pwaHintClose">Понятно</button></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script defer src="data.js"></script>
+<script defer src="events.js"></script>
 <script defer src="app.js"></script>
+<script defer src="v2.js"></script>
 </body>
 </html>

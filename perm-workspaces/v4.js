@@ -43,21 +43,7 @@ function wazeUrl(p){
   if(c)return `https://waze.com/ul?ll=${encodeURIComponent(`${c.lat},${c.lon}`)}&navigate=yes`;
   return `https://waze.com/ul?q=${encodeURIComponent(navAddress(p))}&navigate=yes`;
 }
-function webFallbackUrl(p){
-  const c=navCoord(p);
-  if(c)return `https://yandex.ru/maps/?rtext=~${encodeURIComponent(`${c.lat},${c.lon}`)}&rtt=auto`;
-  return `https://yandex.ru/maps/?text=${encodeURIComponent(`${p.name} ${navAddress(p)}`)}`;
-}
-
-function launchDeepLink(url,fallback){
-  const started=Date.now();
-  window.location.href=url;
-  if(fallback){
-    setTimeout(()=>{
-      if(document.visibilityState==='visible'&&Date.now()-started<2200)window.location.href=fallback;
-    },1200);
-  }
-}
+function launchDeepLink(url){window.location.href=url}
 function navButton(label,sub,action,primary=false){
   return `<button class="navChoice ${primary?'primary':''}" type="button" data-nav-action="${action}"><span class="navChoiceIcon">⌖</span><span><b>${safeText(label)}</b><small>${safeText(sub)}</small></span><em>›</em></button>`;
 }
@@ -65,22 +51,22 @@ function showNavigatorChooser(p){
   const androidGeneric=NAV_PLATFORM.android?navButton('Выбрать установленный навигатор','Android предложит подходящее приложение','system',true):'';
   const iosSystem=NAV_PLATFORM.ios?navButton('Apple Карты','Маршрут от текущего местоположения','apple',false):'';
   openModal(`Как открыть · ${p.name}`,`
-    <div class="navSheetIntro"><b>${safeText(p.address)}</b><span>Выбери приложение. Если оно установлено, откроется сразу в нём.</span></div>
+    <div class="navSheetIntro"><b>${safeText(p.address)}</b><span>Выбери приложение. Сайт не будет отправлять адрес в веб‑версию Яндекс Карт.</span></div>
     <div class="navChoices">
       ${androidGeneric}
       ${navButton('Яндекс Навигатор','Построить маршрут / найти адрес','yandex-navi',!NAV_PLATFORM.android)}
-      ${navButton('Яндекс Карты','Открыть точку в приложении','yandex-maps')}
+      ${navButton('Яндекс Карты','Открыть точку в установленном приложении','yandex-maps')}
       ${iosSystem}
       ${navButton('Google Maps','Маршрут в Google Maps','google')}
       ${navButton('Waze','Маршрут в Waze','waze')}
     </div>
-    <div class="navSheetFoot">На Android лучше использовать «Выбрать установленный навигатор»: системный <code>geo:</code>‑intent позволяет телефону самому открыть подходящее картографическое приложение.</div>`);
+    <div class="navSheetFoot">На Android кнопка адреса использует системный <code>geo:</code>‑intent: если установлено несколько приложений, телефон может предложить выбрать навигатор или использовать назначенный по умолчанию.</div>`);
   const modal=document.getElementById('v2Overlay');
   modal.querySelectorAll('[data-nav-action]').forEach(btn=>btn.addEventListener('click',()=>{
     const action=btn.dataset.navAction;
     if(action==='system'){window.location.href=systemGeoUrl(p);return}
-    if(action==='yandex-navi'){launchDeepLink(yandexNaviUrl(p),webFallbackUrl(p));return}
-    if(action==='yandex-maps'){launchDeepLink(yandexMapsUrl(p),webFallbackUrl(p));return}
+    if(action==='yandex-navi'){launchDeepLink(yandexNaviUrl(p));return}
+    if(action==='yandex-maps'){launchDeepLink(yandexMapsUrl(p));return}
     if(action==='apple'){window.location.href=appleMapsUrl(p);return}
     if(action==='google'){window.location.href=googleMapsUrl(p);return}
     if(action==='waze'){window.location.href=wazeUrl(p);return}
@@ -94,7 +80,7 @@ function patchAddressLabels(root=document){
   root.querySelectorAll?.('.placeAddress').forEach(a=>{
     const small=a.querySelector('small');
     if(small)small.textContent='Адрес · открыть в навигаторе';
-    a.setAttribute('aria-label','Открыть адрес в навигаторе');
+    a.setAttribute('aria-label','Открыть адрес в установленном навигаторе');
   });
 }
 

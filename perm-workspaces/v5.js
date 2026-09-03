@@ -1,3 +1,47 @@
+const CATALOG_REVIEW_DATE_20260903='2026-09-03';
+function applyVerifiedCatalogUpdates20260903(){
+  const patch=(name,changes)=>{const place=places.find(p=>p.name===name);if(place)Object.assign(place,changes)};
+
+  patch('Morion Digital · «Горизонт событий»',{
+    address:'шоссе Космонавтов, 111Д, корпус 10',
+    price:'7 598,70 ₽/мес за рабочее место; переговорная 206,03 ₽/час',
+    priceValue:7598.7,
+    checkedAt:CATALOG_REVIEW_DATE_20260903,
+    source:'https://morion.digital/service/coworking/',
+    desc:'Коворкинг Пермского бизнес-инкубатора в Morion Digital: оборудованные рабочие места, индивидуальное хранение, принтер/сканер, кухня, зона отдыха, переговорная и лекторий. Официальные тарифы действуют с 1 июня 2026 года.'
+  });
+
+  patch('Точка кипения — Пермь',{
+    checkedAt:CATALOG_REVIEW_DATE_20260903,
+    hours:'пн–пт 10:00–19:00, сб–вс выходной',
+    source:'https://leader-id.ru/places/1201'
+  });
+
+  patch('Точка кипения ПГНИУ',{
+    phone:'+73422980647',
+    phoneLabel:'+7 (342) 298-06-47',
+    hours:'пн–пт 09:00–18:00, сб–вс выходной',
+    checkedAt:CATALOG_REVIEW_DATE_20260903,
+    source:'https://leader-id.ru/places/6932',
+    desc:'Университетская Точка кипения с рабочими и событийными зонами. По актуальным правилам для посещения нужны регистрация Leader‑ID, документ, удостоверяющий личность, и сменная обувь.'
+  });
+
+  if(!places.some(p=>p.name==='Точка кипения — Школа «СинТез»')){
+    places.push({
+      id:'perm-leader-sintez-6907',
+      name:'Точка кипения — Школа «СинТез»',
+      category:'networking',district:'Кировский',address:'улица Юнг Прикамья, 3',
+      phone:'+79024778280',phoneLabel:'+7 (902) 477-82-80',
+      priceType:'conditions',price:'доступ по правилам площадки; стоимость не заявлена',priceValue:9999,
+      wifi:'maybe',power:'maybe',stay:'medium',score:86,evidence:'high',featured:false,
+      hours:'пн–пт 09:00–20:00, сб–вс выходной',
+      photo:'',photoCredit:'',source:'https://leader-id.ru/places/6907',checkedAt:CATALOG_REVIEW_DATE_20260903,
+      desc:'Школьная Точка кипения с отдельной «Библиотекой. Зоной коворкинга» до 30 человек, переговорной и проектными лабораториями. Площадка ориентирована в том числе на предпринимателей и индустриальных партнёров; условия самостоятельного доступа лучше согласовать перед визитом.'
+    });
+  }
+}
+applyVerifiedCatalogUpdates20260903();
+
 const ROAD_ROUTER='https://router.project-osrm.org';
 const roadState={
   originKey:null,

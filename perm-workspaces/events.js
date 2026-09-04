@@ -76,6 +76,14 @@ const permEvents = [
     url:'https://www.permtpp.ru/info/articles/b2b-vstrecha_s_rukovodstvom_predpriyatiya_-nskh_aziya_drilling/'
   },
   {
+    id:'ptpp-construction-waste-2026-09-22',
+    title:'Практический опыт внедрения новых правил обращения с отходами строительства и сноса',
+    date:'2026-09-22', time:'14:00', venue:'Пермская ТПП · конференц-зал, 2 этаж',
+    address:'Советская улица, 24Б', kind:'Бизнес / открытый диалог', price:'По предварительной регистрации',
+    desc:'Расширенное заседание профильного комитета Пермской ТПП: бизнес и представители ведомств разберут первые практические сложности работы по новым правилам обращения с отходами строительства и сноса.',
+    url:'https://permtpp.ru/info/articles/prakticheskiy_opyt_vnedreniya_novykh_pravil_obrashcheniya_s_otkhodami_stroitelstva_i_snosa_-osis-_na/'
+  },
+  {
     id:'ptpp-lin-championship-2026-09-22',
     title:'IV Межрегиональный ЛИН-чемпионат «Эффективность и конкурентоспособность 2026»',
     date:'2026-09-22', time:'22–25 сентября · до 6 ч на тур', venue:'Выставка «Металлообработка. Металлургия»',

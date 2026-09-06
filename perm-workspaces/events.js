@@ -18,6 +18,14 @@ const permEvents = [
     url:'https://www.permtpp.ru/info/articles/v2v-vstrecha_s_rukovodstvom_predpriyatiya_-reduktor-pm/'
   },
   {
+    id:'morion-qa-trends-2026-09-09',
+    title:'QA Guild Perm · «QA-Тренды: будущее профессии, кейсы с ИИ и карьера»',
+    date:'2026-09-09', time:'19:30', venue:'Morion Digital · зал «Эдисон»',
+    address:'шоссе Космонавтов, 111Д, корпус 10', kind:'IT / профессиональное сообщество / нетворкинг', price:'По регистрации; условия у организатора',
+    desc:'Встреча сообщества QA Guild Perm о влиянии ИИ на тестирование, практических кейсах, карьерных ориентирах и рынке труда. В программе заявлен открытый профессиональный нетворкинг.',
+    url:'https://morion.digital/en/news/afisha-sobytij-morion-didzhital-sentyabr-2026/'
+  },
+  {
     id:'ptpp-nbtech-2026-09-10',
     title:'B2B-встреча с руководством «НБТех»',
     date:'2026-09-10', time:'10:00', venue:'Пермская ТПП',
@@ -50,6 +58,14 @@ const permEvents = [
     url:'https://www.permtpp.ru/info/articles/b2b-vstrecha_s_rukovodstvom_predpriyatiya_-korporatsiya_vsmpo_avisma/'
   },
   {
+    id:'morion-programmer-day-2026-09-12',
+    title:'Митап ко Дню программиста «Снова в Школу»',
+    date:'2026-09-12', time:'время уточнить у организатора', venue:'Школа 21 · Morion Digital',
+    address:'шоссе Космонавтов, 111Д, корпус 10', kind:'IT / профессиональное сообщество', price:'По регистрации; условия у организатора',
+    desc:'Профессиональный митап ко Дню программиста на площадке «Школы 21». Событие включено в официальную сентябрьскую афишу Morion Digital; точное время организатор в афише не указал.',
+    url:'https://morion.digital/en/news/afisha-sobytij-morion-didzhital-sentyabr-2026/'
+  },
+  {
     id:'big-perm-networking-2026-09-15',
     title:'Большой Пермский Нетворкинг',
     date:'2026-09-15', time:'14:00–17:00',
@@ -74,6 +90,14 @@ const permEvents = [
     address:'Пермская улица, 33', kind:'Деловой завтрак', price:'По регистрации',
     desc:'Камерная встреча бизнес-клуба «Идея» с директором Агрофирмы «Победа» Ольгой Туневой: разговор о модернизации, кадрах и развитии бизнеса.',
     url:'https://www.permtpp.ru/info/articles/delovoy_zavtrak_-osobyy_gost-_s_olgoy_tunevoy/'
+  },
+  {
+    id:'morion-business-strategy-2026-09-17',
+    title:'Бизнес-разборы стратегий развития с экспертами',
+    date:'2026-09-17', time:'17:00', venue:'Пермский бизнес-инкубатор · коворкинг Morion Digital',
+    address:'шоссе Космонавтов, 111Д, корпус 10', kind:'Бизнес-разбор / стратегия / нетворкинг', price:'По регистрации; условия у организатора',
+    desc:'Групповые разборы стратегий развития с руководителем бизнес-инкубатора Ксенией Мальцевой и экспертами-трекерами ФРИИ Сергеем Малининым и Юрием Михайловым.',
+    url:'https://morion.digital/en/news/afisha-sobytij-morion-didzhital-sentyabr-2026/'
   },
   {
     id:'ptpp-nsh-2026-09-22',
@@ -135,7 +159,7 @@ const permEvents = [
     id:'morion-innovators-club-2026-09-24',
     title:'Встреча клуба инноваторов Пермского края',
     date:'2026-09-24', time:'16:00–18:00', venue:'Morion Digital · зал «Эдисон»',
-    address:'шоссе Космонавтов, 111Д', kind:'Стартапы / бизнес / нетворкинг', price:'0 ₽, по регистрации',
+    address:'шоссе Космонавтов, 111Д, корпус 10', kind:'Стартапы / бизнес / нетворкинг', price:'0 ₽, по регистрации',
     desc:'Встреча технологических проектов и реального бизнеса: презентации стартапов, запросы команд, экспертная обратная связь и активный нетворкинг для поиска партнёров и площадок для пилотов.',
     url:'https://tekhnopark-morion-digital.timepad.ru/event/4165540/'
   },
@@ -143,9 +167,9 @@ const permEvents = [
     id:'morion-permiantech-brand-2026-09-24',
     title:'PermianTECH · «Сервисная экосистема бренда»',
     date:'2026-09-24', time:'18:00–20:00', venue:'Morion Digital · зал «Эдисон»',
-    address:'шоссе Космонавтов, 111Д', kind:'Технологическое предпринимательство / сообщество', price:'По регистрации',
+    address:'шоссе Космонавтов, 111Д, корпус 10', kind:'Технологическое предпринимательство / сообщество', price:'По регистрации',
     desc:'Встреча сообщества PermianTECH о сервисной экосистеме бренда. Включена в официальную сентябрьскую афишу Morion Digital и подходит предпринимателям и технологическим командам для профессионального общения.',
-    url:'https://morion.digital/news/afisha-sobytij-morion-didzhital-sentyabr-2026/'
+    url:'https://morion.digital/en/news/afisha-sobytij-morion-didzhital-sentyabr-2026/'
   },
   {
     id:'ptpp-speed-networking-2026-09-25',

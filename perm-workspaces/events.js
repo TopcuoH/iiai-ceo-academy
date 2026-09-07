@@ -92,6 +92,14 @@ const permEvents = [
     url:'https://www.permtpp.ru/info/articles/delovoy_zavtrak_-osobyy_gost-_s_olgoy_tunevoy/'
   },
   {
+    id:'ptpp-domain-verification-2026-09-17',
+    title:'Обязательная верификация доменов .RU, .РФ и .SU: ошибки и последствия',
+    date:'2026-09-17', time:'14:00', venue:'Пермская ТПП · конференц-зал, 2 этаж',
+    address:'Советская улица, 24Б', kind:'Бизнес / IT / правовые риски', price:'По обязательной предварительной регистрации',
+    desc:'Практическая встреча о новых требованиях к идентификации администраторов национальных доменов: что будет без верификации, как снизить риски подставных сайтов и потери домена, и как пройти процедуру через ЕСИА.',
+    url:'https://permtpp.ru/info/articles/obyazatelnaya_verifikatsiya_domenov_-ru-_-rf_i_-su-_vozmozhnye_oshibki_i_posledstviya/'
+  },
+  {
     id:'morion-business-strategy-2026-09-17',
     title:'Бизнес-разборы стратегий развития с экспертами',
     date:'2026-09-17', time:'17:00', venue:'Пермский бизнес-инкубатор · коворкинг Morion Digital',

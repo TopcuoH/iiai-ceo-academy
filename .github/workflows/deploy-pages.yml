@@ -39,6 +39,7 @@ jobs:
           node --check perm-workspaces/v7.js
           node --check perm-workspaces/v8.js
           node --check perm-workspaces/v9.js
+          node --check perm-workspaces/v10.js
           node -e "JSON.parse(require('fs').readFileSync('perm-workspaces/manifest.webmanifest','utf8'))"
           if grep -R "Яблочкова" perm-workspaces; then
             echo "Old location binding found in Perm Work catalog"

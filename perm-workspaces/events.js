@@ -50,6 +50,14 @@ const permEvents = [
     url:'https://permtpp.ru/info/articles/vtoroy_hr-forum_permskoy_tpp_-hr_-_2026-_lyudi-_smysly-_sreda-_motivatsiya-_bolshaya_peresborka/'
   },
   {
+    id:'legend-hospitality-2026-09-10',
+    title:'VII Всероссийская олимпиада по кулинарии и сервису «Легенда»',
+    date:'2026-09-10', time:'10–12 сентября', venue:'КВЦ «Пермь Экспо»',
+    address:'шоссе Космонавтов, 59', kind:'HoReCa / профессиональная программа / нетворкинг', price:'0 ₽, предварительная запись на открытые мастер-классы не требуется',
+    desc:'Профессиональная олимпиада индустрии гостеприимства с участием более 200 специалистов из 35 регионов. В программе заявлены восемь открытых мастер-классов, обмен практиками и профессиональное общение.',
+    url:'https://www.permtpp.ru/tpp/press/news/ot_russkoy_pechi_do_restorannoy_podachi-_na_olimpiade_-legenda-_proydut_vosem_otkrytykh_master-klass/'
+  },
+  {
     id:'ptpp-vsmpo-2026-09-11',
     title:'B2B-встреча с «Корпорацией ВСМПО-АВИСМА»',
     date:'2026-09-11', time:'15:00', venue:'Пермская ТПП',
@@ -178,6 +186,14 @@ const permEvents = [
     address:'шоссе Космонавтов, 59', kind:'Промышленность / закупки', price:'По регистрации',
     desc:'Деловая площадка Пермской ТПП о подтверждении российского производства, качестве и государственных закупках.',
     url:'https://permtpp.ru/info/articles/navigator_promyshlennogo_predpriyatiya/'
+  },
+  {
+    id:'kommersant-metalworking-innovation-2026-09-24',
+    title:'Круглый стол «Инновации в металлообработке»',
+    date:'2026-09-24', time:'13:00–15:00', venue:'КВЦ «Пермь Экспо» · конференц-зал №5',
+    address:'шоссе Космонавтов, 59', kind:'Промышленность / инновации / деловой круглый стол', price:'0 ₽, по регистрации',
+    desc:'Дискуссия о технологическом развитии металлообработки с участием промышленных предприятий, поставщиков оборудования, интеграторов, IT-компаний и научного сообщества. Подходит для профессиональных контактов и обмена практиками.',
+    url:'https://events.kommersant.ru/perm/events/innovaczii-v-metalloobrabotke/'
   },
   {
     id:'ptpp-new-links-economy-2026-09-24',

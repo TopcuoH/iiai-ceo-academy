@@ -168,6 +168,14 @@ const permEvents = [
     url:'https://www.permtpp.ru/info/articles/novaya_ekonomika_svyazey-_mezhotraslevaya_i_mezhregionalnaya_kooperatsiya_/'
   },
   {
+    id:'ptpp-welding-robots-battle-2026-09-24',
+    title:'Битва сварочных роботов',
+    date:'2026-09-24', time:'24 сентября · время у организатора', venue:'КВЦ «Пермь Экспо»',
+    address:'шоссе Космонавтов, 59', kind:'Промышленность / роботизация / профессиональное сообщество', price:'Условия участия — у организатора',
+    desc:'Пять интеграторов роботизированной сварки выполнят одинаковые производственные задания в реальных условиях; в рамках программы также пройдет награждение победителей конкурса «Лучший по профессии» в номинации «Сварщик».',
+    url:'https://permtpp.ru/tpp/press/news/permskaya_tpp_priglashaet_na_meropriyatiya_po_svarochnomu_proizvodstvu/'
+  },
+  {
     id:'morion-innovators-club-2026-09-24',
     title:'Встреча клуба инноваторов Пермского края',
     date:'2026-09-24', time:'16:00–18:00', venue:'Morion Digital · зал «Эдисон»',
@@ -230,6 +238,14 @@ const permEvents = [
     address:'Советская улица, 1Б', kind:'Бизнес / управление / нетворкинг', price:'0 ₽, по регистрации',
     desc:'Практическая конференция о личной стратегии, управлении собой и командой и развитии бизнеса в условиях изменений.',
     url:'https://prooporarossii.timepad.ru/events/'
+  },
+  {
+    id:'incubator-business-review-2026-10-01',
+    title:'Бесплатный бизнес-разбор',
+    date:'2026-10-01', time:'17:00', venue:'Пермский бизнес-инкубатор · коворкинг Morion Digital',
+    address:'шоссе Космонавтов, 111Д', kind:'Бизнес-разбор / предпринимательство / нетворкинг', price:'0 ₽, количество мест ограничено',
+    desc:'Практический разбор вопросов, идей и конкретных бизнес-задач с предпринимателями и трекерами ФРИИ: проверка гипотез, поиск точек роста и рекомендации по развитию.',
+    url:'https://incubatorperm.ru/event-announcements/besplatnyj-biznes-razbor-1-oktyabrya/'
   },
   {
     id:'kommersant-retail-2026-10-08',

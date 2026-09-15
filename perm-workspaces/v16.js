@@ -52,4 +52,23 @@ function applyVerifiedCatalogUpdates20260915(){
   }
 }
 
+function renderVerifiedPermEvents20260915(){
+  const grid=document.getElementById('eventsGrid');
+  if(!grid||typeof permEvents==='undefined')return;
+  const events=[...permEvents].sort((a,b)=>String(a.date).localeCompare(String(b.date))||String(a.time).localeCompare(String(b.time),'ru'));
+  grid.innerHTML='';
+  const fmt=new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'long'});
+  events.forEach(event=>{
+    const d=new Date(`${event.date}T12:00:00+05:00`);
+    const card=document.createElement('article');
+    card.className='eventCard';
+    card.dataset.eventId=event.id;
+    card.innerHTML=`<div class="eventTop"><span class="eventDate">${fmt.format(d)}</span><span class="eventKind">${safeText(event.kind||'Событие')}</span></div><h3>${safeText(event.title)}</h3><p>${safeText(event.desc||'')}</p><div class="eventMeta"><span>🕒 ${safeText(event.time||'Время у организатора')}</span><span>📍 ${safeText(event.venue||'Пермь')}</span><span>${safeText(event.address||'')}</span><span>💳 ${safeText(event.price||'Условия у организатора')}</span></div><a class="eventLink" target="_blank" rel="noopener" href="${safeText(event.url)}">Открыть событие ↗</a>`;
+    grid.appendChild(card);
+  });
+}
+
 applyVerifiedCatalogUpdates20260915();
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',renderVerifiedPermEvents20260915,{once:true});
+else renderVerifiedPermEvents20260915();
+setTimeout(renderVerifiedPermEvents20260915,500);

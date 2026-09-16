@@ -1,4 +1,5 @@
 const CATALOG_REVIEW_DATE_20260915='2026-09-15';
+const CATALOG_REVIEW_DATE_20260916='2026-09-16';
 
 function applyVerifiedCatalogUpdates20260915(){
   if(!places.some(p=>p.id==='perm-business-incubator-creative-gorkogo-27'||(p.name.includes('Пермский бизнес-инкубатор')&&p.address==='улица Максима Горького, 27'))){
@@ -52,6 +53,42 @@ function applyVerifiedCatalogUpdates20260915(){
   }
 }
 
+function applyVerifiedCatalogUpdates20260916(){
+  const ozarenie=places.find(p=>p.name==='Дом практик «Озарение»');
+  if(ozarenie){
+    ozarenie.checkedAt=CATALOG_REVIEW_DATE_20260916;
+    ozarenie.address='улица Елькина, 41А, 4 этаж';
+    ozarenie.phone='+79097271890';
+    ozarenie.phoneLabel='+7 (909) 727-18-90';
+    ozarenie.evidence='high';
+    ozarenie.priceType='paid';
+    ozarenie.price='от 310 ₽/час; кабинеты и залы 390–800 ₽/час; комната медитаций 1 900 ₽/сутки';
+    ozarenie.priceValue=310;
+    ozarenie.wifi='maybe';
+    ozarenie.power='maybe';
+    ozarenie.stay='medium';
+    ozarenie.hours='ежедневно 08:00–21:00';
+    ozarenie.source='https://www.dom-ozarenie.ru/';
+    ozarenie.desc='Подтверждённое профессиональное пространство для психологов, коучей, репетиторов, массажистов, инструкторов, ведущих мастер-классов и небольших групп. Официальный сайт подтверждает кабинеты и залы, почасовую и суточную аренду, зону отдыха, чай и воду, кухню и профессиональное сообщество. 2ГИС подтверждает адрес и режим работы. Wi‑Fi и наличие розеток как отдельная услуга в проверенных источниках не указаны — эти параметры требуют уточнения.';
+  }
+
+  const hereNow=places.find(p=>p.name==='Здесь и Сейчас');
+  if(hereNow){
+    hereNow.checkedAt=CATALOG_REVIEW_DATE_20260916;
+    hereNow.evidence='low';
+    hereNow.score=50;
+    hereNow.priceType='conditions';
+    hereNow.price='статус работы и актуальные тарифы требуют уточнения перед визитом';
+    hereNow.priceValue=9999;
+    hereNow.wifi='maybe';
+    hereNow.power='maybe';
+    hereNow.stay='medium';
+    hereNow.hours='статус и режим требуют уточнения: справочники расходятся';
+    hereNow.source='https://yandex.com/maps/org/zdes_i_seychas/211798575211/';
+    hereNow.desc='Статус коворкинга сейчас противоречив: Яндекс Карты помечают точку на Комсомольском проспекте, 27 как закрытую, тогда как несколько профильных справочников и карт продолжают показывать рабочий график. До независимого подтверждения на месте карточка сохранена только как требующая уточнения; старые тарифы, Wi‑Fi и розетки больше не выдаются как актуальный факт.';
+  }
+}
+
 function renderVerifiedPermEvents20260915(){
   const grid=document.getElementById('eventsGrid');
   if(!grid||typeof permEvents==='undefined')return;
@@ -68,7 +105,20 @@ function renderVerifiedPermEvents20260915(){
   });
 }
 
+function updateCatalogRevisionStamp20260916(){
+  const footer=document.querySelector('footer');
+  if(footer)footer.innerHTML=footer.innerHTML.replace('15 сентября 2026 г.','16 сентября 2026 г.');
+}
+
 applyVerifiedCatalogUpdates20260915();
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',renderVerifiedPermEvents20260915,{once:true});
-else renderVerifiedPermEvents20260915();
+applyVerifiedCatalogUpdates20260916();
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',()=>{
+    renderVerifiedPermEvents20260915();
+    updateCatalogRevisionStamp20260916();
+  },{once:true});
+}else{
+  renderVerifiedPermEvents20260915();
+  updateCatalogRevisionStamp20260916();
+}
 setTimeout(renderVerifiedPermEvents20260915,500);

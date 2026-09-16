@@ -16,22 +16,6 @@ const permEvents = [
     url:'https://permtpp.ru/info/articles/kursy_povysheniya_kvalifikatsii_po_zakonu_44-fz_sept26/'
   },
   {
-    id:'big-perm-networking-2026-09-15',
-    title:'Большой Пермский Нетворкинг',
-    date:'2026-09-15', time:'14:00–17:00', venue:'Точка кипения — Пермь',
-    address:'Советская улица, 1Б', kind:'Нетворкинг', price:'По регистрации',
-    desc:'Профессиональная встреча для предпринимателей и специалистов: знакомства, самопрезентация и развитие деловых связей.',
-    url:'https://leader-id.ru/events/610526'
-  },
-  {
-    id:'ptpp-hampton-2026-09-15',
-    title:'Бизнес-экскурсия в Hampton by Hilton',
-    date:'2026-09-15', time:'15:00', venue:'Hampton by Hilton Perm',
-    address:'улица Окулова, 14', kind:'Экскурсия / нетворкинг', price:'По обязательной предварительной регистрации',
-    desc:'Экскурсия бизнес-клуба «Идея» по гостиничному проекту: знакомство с объектом, трендами девелопмента и гостеприимства и общение с бизнес-сообществом.',
-    url:'https://www.permtpp.ru/info/articles/ekskursiya_v_hampton_by_hilton_ot_biznes-kluba_-ideya/'
-  },
-  {
     id:'opora-open-house-2026-09-16',
     title:'День открытых дверей в «ОПОРЕ РОССИИ»',
     date:'2026-09-16', time:'15:00–16:00', venue:'Пермское отделение «ОПОРЫ РОССИИ»',
@@ -222,6 +206,14 @@ const permEvents = [
     address:'Монастырская улица, 15, 4 этаж', kind:'Бизнес-обучение / закупки', price:'17 000 ₽ очно / 15 000 ₽ гибридно',
     desc:'40-часовой курс для руководителей, закупщиков, юристов и членов закупочных комиссий по изменениям 223-ФЗ, национальному режиму, планированию, НМЦД и закупкам у СМСП.',
     url:'https://permtpp.ru/info/articles/kursy_povysheniya_kvalifikatsii_po_organizatsii_zakupok_po_zakonu_223-fz_sept26/'
+  },
+  {
+    id:'ptpp-corporate-demography-2026-09-28',
+    title:'Корпоративные демографические практики: от идей к реальным решениям',
+    date:'2026-09-28', time:'14:00', venue:'Пермская ТПП · конференц-зал, 2 этаж',
+    address:'Советская улица, 24Б', kind:'HR / бизнес / стратегическая сессия', price:'0 ₽, обязательна предварительная регистрация',
+    desc:'Стратегическая сессия о корпоративном демографическом стандарте и инструментах поддержки семей сотрудников. Практики представят крупные предприятия региона; предусмотрен обмен опытом с бизнесом и представителями власти.',
+    url:'https://www.permtpp.ru/info/articles/korporativnye_demograficheskie_praktiki-_ot_idey_k_realnym_resheniyam/'
   },
   {
     id:'ptpp-labor-training-changes-2026-09-29',

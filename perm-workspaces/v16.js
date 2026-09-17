@@ -1,5 +1,6 @@
 const CATALOG_REVIEW_DATE_20260915='2026-09-15';
 const CATALOG_REVIEW_DATE_20260916='2026-09-16';
+const CATALOG_REVIEW_DATE_20260917='2026-09-17';
 
 function applyVerifiedCatalogUpdates20260915(){
   if(!places.some(p=>p.id==='perm-business-incubator-creative-gorkogo-27'||(p.name.includes('Пермский бизнес-инкубатор')&&p.address==='улица Максима Горького, 27'))){
@@ -89,6 +90,27 @@ function applyVerifiedCatalogUpdates20260916(){
   }
 }
 
+function applyVerifiedCatalogUpdates20260917(){
+  const hz=places.find(p=>p.name==='528 Гц'||p.name==='528Hz');
+  if(hz){
+    hz.name='528Hz';
+    hz.checkedAt=CATALOG_REVIEW_DATE_20260917;
+    hz.address='улица Пушкина, 84, офис 6, 3 этаж';
+    hz.phone='+79587628636';
+    hz.phoneLabel='+7 (958) 762-86-36';
+    hz.evidence='high';
+    hz.priceType='paid';
+    hz.price='от 170 ₽/час; помещения 12–40 м²';
+    hz.priceValue=170;
+    hz.wifi='maybe';
+    hz.power='maybe';
+    hz.stay='medium';
+    hz.hours='ежедневно; время закрытия требует уточнения: 2ГИС указывает до 23:00, Яндекс — до 22:00';
+    hz.source='https://528hz.pro/';
+    hz.desc='Профессиональное пространство почасовой аренды для частной практики, консультаций, встреч и небольших мероприятий. Подтверждены адрес Пушкина, 84 (офис 6, 3 этаж), актуальный телефон, формат коворкинга/переговорных и ставка от 170 ₽/час за помещения 12–40 м². Время закрытия в картах расходится, а Wi‑Fi и розетки для этой конкретной точки отдельно не подтверждены — эти параметры требуют уточнения.';
+  }
+}
+
 function renderVerifiedPermEvents20260915(){
   const grid=document.getElementById('eventsGrid');
   if(!grid||typeof permEvents==='undefined')return;
@@ -105,20 +127,21 @@ function renderVerifiedPermEvents20260915(){
   });
 }
 
-function updateCatalogRevisionStamp20260916(){
+function updateCatalogRevisionStamp20260917(){
   const footer=document.querySelector('footer');
-  if(footer)footer.innerHTML=footer.innerHTML.replace('15 сентября 2026 г.','16 сентября 2026 г.');
+  if(footer)footer.innerHTML=footer.innerHTML.replace(/Последняя базовая ревизия:\s*\d{1,2}\s+[а-яё]+\s+2026\s+г\./i,'Последняя базовая ревизия: 17 сентября 2026 г.');
 }
 
 applyVerifiedCatalogUpdates20260915();
 applyVerifiedCatalogUpdates20260916();
+applyVerifiedCatalogUpdates20260917();
 if(document.readyState==='loading'){
   document.addEventListener('DOMContentLoaded',()=>{
     renderVerifiedPermEvents20260915();
-    updateCatalogRevisionStamp20260916();
+    updateCatalogRevisionStamp20260917();
   },{once:true});
 }else{
   renderVerifiedPermEvents20260915();
-  updateCatalogRevisionStamp20260916();
+  updateCatalogRevisionStamp20260917();
 }
 setTimeout(renderVerifiedPermEvents20260915,500);

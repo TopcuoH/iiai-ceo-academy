@@ -111,10 +111,61 @@ function applyVerifiedCatalogUpdates20260917(){
   }
 }
 
+const EVENT_MONTH_NUMBER={
+  'января':'01','февраля':'02','марта':'03','апреля':'04','мая':'05','июня':'06',
+  'июля':'07','августа':'08','сентября':'09','октября':'10','ноября':'11','декабря':'12'
+};
+
+function permNow20260917(){
+  const parts=new Intl.DateTimeFormat('en-US',{
+    timeZone:'Asia/Yekaterinburg',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'
+  }).formatToParts(new Date());
+  const map=Object.fromEntries(parts.map(part=>[part.type,part.value]));
+  return {date:`${map.year}-${map.month}-${map.day}`,minutes:Number(map.hour)*60+Number(map.minute)};
+}
+
+function eventEndDate20260917(event){
+  if(/^\d{4}-\d{2}-\d{2}$/.test(event.endDate||''))return event.endDate;
+  const source=String(event.time||'').toLowerCase().replace(/\s+/g,' ');
+  const year=String(event.date||'').slice(0,4)||String(new Date().getFullYear());
+  const cross=source.match(/\b(\d{1,2})\s+(января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)\s*[–—-]\s*(\d{1,2})\s+(января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)\b/);
+  if(cross){
+    return `${year}-${EVENT_MONTH_NUMBER[cross[4]]}-${String(Number(cross[3])).padStart(2,'0')}`;
+  }
+  const same=source.match(/\b(\d{1,2})\s*[–—-]\s*(\d{1,2})\s+(января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)\b/);
+  if(same){
+    return `${year}-${EVENT_MONTH_NUMBER[same[3]]}-${String(Number(same[2])).padStart(2,'0')}`;
+  }
+  return event.date;
+}
+
+function eventEndMinutes20260917(event){
+  const source=String(event.time||'');
+  const match=source.match(/\b(\d{1,2}):(\d{2})\s*[–—-]\s*(\d{1,2}):(\d{2})\b/);
+  if(!match)return null;
+  return Number(match[3])*60+Number(match[4]);
+}
+
+function eventIsCurrent20260917(event){
+  const now=permNow20260917();
+  const endDate=eventEndDate20260917(event);
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(endDate||''))return true;
+  if(endDate>now.date)return true;
+  if(endDate<now.date)return false;
+  const endMinutes=eventEndMinutes20260917(event);
+  return endMinutes===null||now.minutes<=endMinutes;
+}
+
+function removeExpiredPermEvents20260917(){
+  if(typeof permEvents==='undefined')return;
+  const active=permEvents.filter(eventIsCurrent20260917);
+  permEvents.splice(0,permEvents.length,...active);
+}
+
 function renderVerifiedPermEvents20260915(){
   const grid=document.getElementById('eventsGrid');
   if(!grid||typeof permEvents==='undefined')return;
-  const events=[...permEvents].sort((a,b)=>String(a.date).localeCompare(String(b.date))||String(a.time).localeCompare(String(b.time),'ru'));
+  const events=[...permEvents].filter(eventIsCurrent20260917).sort((a,b)=>String(a.date).localeCompare(String(b.date))||String(a.time).localeCompare(String(b.time),'ru'));
   grid.innerHTML='';
   const fmt=new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'long'});
   events.forEach(event=>{
@@ -135,13 +186,19 @@ function updateCatalogRevisionStamp20260917(){
 applyVerifiedCatalogUpdates20260915();
 applyVerifiedCatalogUpdates20260916();
 applyVerifiedCatalogUpdates20260917();
+removeExpiredPermEvents20260917();
 if(document.readyState==='loading'){
   document.addEventListener('DOMContentLoaded',()=>{
+    removeExpiredPermEvents20260917();
     renderVerifiedPermEvents20260915();
     updateCatalogRevisionStamp20260917();
   },{once:true});
 }else{
+  removeExpiredPermEvents20260917();
   renderVerifiedPermEvents20260915();
   updateCatalogRevisionStamp20260917();
 }
-setTimeout(renderVerifiedPermEvents20260915,500);
+setTimeout(()=>{
+  removeExpiredPermEvents20260917();
+  renderVerifiedPermEvents20260915();
+},500);

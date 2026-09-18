@@ -12,14 +12,31 @@ function applyVerifiedCatalogUpdates20260918(){
   boilingPerm.source='https://leader-id.ru/places/1201';
 }
 
+function deduplicatePermEvents20260918(){
+  if(typeof permEvents==='undefined')return;
+  const seen=new Set();
+  const unique=permEvents.filter(event=>{
+    const key=`${event.date||''}|${String(event.title||'').trim().toLowerCase()}`;
+    if(seen.has(key))return false;
+    seen.add(key);
+    return true;
+  });
+  permEvents.splice(0,permEvents.length,...unique);
+}
+
 function updateCatalogRevisionStamp20260918(){
   const footer=document.querySelector('footer');
   if(footer)footer.innerHTML=footer.innerHTML.replace(/Последняя базовая ревизия:\s*\d{1,2}\s+[а-яё]+\s+2026\s+г\./i,'Последняя базовая ревизия: 18 сентября 2026 г.');
 }
 
 applyVerifiedCatalogUpdates20260918();
+deduplicatePermEvents20260918();
 if(document.readyState==='loading'){
-  document.addEventListener('DOMContentLoaded',updateCatalogRevisionStamp20260918,{once:true});
+  document.addEventListener('DOMContentLoaded',()=>{
+    deduplicatePermEvents20260918();
+    updateCatalogRevisionStamp20260918();
+  },{once:true});
 }else{
   updateCatalogRevisionStamp20260918();
 }
+setTimeout(deduplicatePermEvents20260918,800);

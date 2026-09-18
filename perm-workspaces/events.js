@@ -16,38 +16,6 @@ const permEvents = [
     url:'https://permtpp.ru/info/articles/kursy_povysheniya_kvalifikatsii_po_zakonu_44-fz_sept26/'
   },
   {
-    id:'ptpp-special-guest-2026-09-17',
-    title:'Деловой завтрак «Особый гость» с Ольгой Туневой',
-    date:'2026-09-17', time:'09:30', venue:'Ресторан «Эсквайр»',
-    address:'Пермская улица, 33', kind:'Деловой завтрак', price:'По регистрации',
-    desc:'Камерная встреча бизнес-клуба «Идея» с директором Агрофирмы «Победа» Ольгой Туневой: разговор о модернизации, кадрах и развитии бизнеса.',
-    url:'https://www.permtpp.ru/info/articles/delovoy_zavtrak_-osobyy_gost-_s_olgoy_tunevoy/'
-  },
-  {
-    id:'ptpp-domain-verification-2026-09-17',
-    title:'Обязательная верификация доменов .RU, .РФ и .SU: ошибки и последствия',
-    date:'2026-09-17', time:'14:00', venue:'Пермская ТПП · конференц-зал, 2 этаж',
-    address:'Советская улица, 24Б', kind:'Бизнес / IT / правовые риски', price:'По обязательной предварительной регистрации',
-    desc:'Практическая встреча о новых требованиях к идентификации администраторов национальных доменов и снижении рисков потери домена.',
-    url:'https://permtpp.ru/info/articles/obyazatelnaya_verifikatsiya_domenov_-ru-_-rf_i_-su-_vozmozhnye_oshibki_i_posledstviya/'
-  },
-  {
-    id:'opora-megapolis-2026-09-17',
-    title:'Встреча с застройщиком ГСК «Мегаполис»',
-    date:'2026-09-17', time:'15:00–17:00', venue:'Точка кипения — Пермь · лекторий',
-    address:'Советская улица, 1Б', kind:'Недвижимость / партнёрства / нетворкинг', price:'0 ₽, по регистрации',
-    desc:'Встреча с директором по развитию Михаилом Крепаком: проекты застройщика, тенденции рынка, взаимодействие с бизнесом и возможности партнёрства.',
-    url:'https://prooporarossii.timepad.ru/events/'
-  },
-  {
-    id:'morion-business-strategy-2026-09-17',
-    title:'Бизнес-разборы стратегий развития с экспертами',
-    date:'2026-09-17', time:'17:00', venue:'Пермский бизнес-инкубатор · коворкинг Morion Digital',
-    address:'шоссе Космонавтов, 111Д, корпус 10', kind:'Бизнес-разбор / стратегия / нетворкинг', price:'По регистрации; условия у организатора',
-    desc:'Групповые разборы стратегий развития с руководителем бизнес-инкубатора и экспертами-трекерами.',
-    url:'https://morion.digital/en/news/afisha-sobytij-morion-didzhital-sentyabr-2026/'
-  },
-  {
     id:'opora-star-breakfast-2026-09-18',
     title:'Завтрак со звездой: Екатерина Трофимова',
     date:'2026-09-18', time:'10:00–12:00', venue:'ПРО «ОПОРА РОССИИ»',
@@ -102,6 +70,22 @@ const permEvents = [
     address:'КВЦ «Пермь Экспо», шоссе Космонавтов, 59', kind:'Командный чемпионат / нетворкинг', price:'0 ₽, обязательна регистрация каждого участника команды',
     desc:'Командное соревнование по бережливому производству, эффективности, лидерству и инновациям; организаторы отдельно отмечают профессиональное сообщество и нетворкинг.',
     url:'https://www.permtpp.ru/info/articles/iv_mezhregionalnyy_lin-chempionat_-effektivnost_i_konkurentosposobnost_2026/'
+  },
+  {
+    id:'mybusiness-rosreestr-2026-09-23',
+    title:'День Росреестра: особенности регистрации недвижимости в электронном формате',
+    date:'2026-09-23', time:'10:00–12:00', venue:'Центр «Мой бизнес» · конференц-зал',
+    address:'улица Ленина, 68', kind:'Недвижимость / право / круглый стол', price:'0 ₽, обязательна регистрация',
+    desc:'Эксперты Росреестра разберут электронную регистрацию недвижимости, существенные условия договоров, проверку ограничений по ЕГРН и сделки с материнским капиталом. Доступно также онлайн-подключение.',
+    url:'https://msppk.ru/events/den-rosreestra-osobennosti-registratsii-nedvizhimosti-v-elektronnom-formate/'
+  },
+  {
+    id:'opora-open-house-2026-09-23',
+    title:'День открытых дверей в «ОПОРЕ РОССИИ»',
+    date:'2026-09-23', time:'15:00–16:00', venue:'Пермское региональное отделение «ОПОРА РОССИИ»',
+    address:'Точный адрес указан при регистрации', kind:'Предпринимательское сообщество / нетворкинг', price:'По регистрации',
+    desc:'Знакомство с работой предпринимательского сообщества, его комитетами и возможностями для обмена опытом, консультаций, партнёрств и совместных проектов.',
+    url:'https://prooporarossii.timepad.ru/events/'
   },
   {
     id:'naks-pro-welding-2026-09-23',
@@ -184,6 +168,14 @@ const permEvents = [
     url:'https://permtpp.ru/info/articles/ot_berezhlivogo_proizvodstva_k_gibkoy_innovatsionnoy_biznes-sisteme/'
   },
   {
+    id:'mybusiness-business-control-2026-09-25',
+    title:'Бизнес под контролем: как управлять по цифрам, а не на ощущениях',
+    date:'2026-09-25', time:'10:00–16:00', venue:'Центр «Мой бизнес»',
+    address:'улица Ленина, 68', kind:'Финансы / тренинг / предпринимательство', price:'По регистрации',
+    desc:'Практический тренинг для предпринимателей по управлению бизнесом на основе финансовых показателей и данных.',
+    url:'https://msppk.ru/events/biznes-pod-kontrolem/'
+  },
+  {
     id:'leader-presentation-2026-09-26',
     title:'Разработка презентации, публичные выступления',
     date:'2026-09-26', time:'17:00–19:00', venue:'Точка кипения — Пермь',
@@ -208,6 +200,14 @@ const permEvents = [
     url:'https://www.permtpp.ru/info/articles/korporativnye_demograficheskie_praktiki-_ot_idey_k_realnym_resheniyam/'
   },
   {
+    id:'mybusiness-chestny-znak-2026-09-28',
+    title:'Маркировка товаров «Честный знак»: пошаговый алгоритм работы для производителей',
+    date:'2026-09-28', endDate:'2026-10-14', time:'28 сентября, 2 и 14 октября · 10:00', venue:'Центр «Мой бизнес»',
+    address:'улица Ленина, 68', kind:'Образовательная программа / маркировка / производство', price:'По регистрации',
+    desc:'Практическая образовательная программа по работе производителей с системой цифровой маркировки «Честный знак».',
+    url:'https://msppk.ru/events/prakticheskaya-obuchayushchaya-programma-markirovka-tovarov-chestnyy-znak-poshagovyy-algoritm-raboty/'
+  },
+  {
     id:'ptpp-labor-training-changes-2026-09-29',
     title:'Ключевые изменения в обучении по охране труда',
     date:'2026-09-29', time:'15:00', venue:'Пермская ТПП · конференц-зал, 2 этаж',
@@ -230,6 +230,14 @@ const permEvents = [
     address:'шоссе Космонавтов, 111Д', kind:'Бизнес-разбор / предпринимательство / нетворкинг', price:'0 ₽, количество мест ограничено',
     desc:'Практический разбор вопросов, идей и конкретных бизнес-задач с предпринимателями и трекерами ФРИИ: проверка гипотез, поиск точек роста и рекомендации по развитию.',
     url:'https://incubatorperm.ru/event-announcements/besplatnyj-biznes-razbor-1-oktyabrya/'
+  },
+  {
+    id:'mybusiness-voice-leader-2026-10-07',
+    title:'Голос руководителя: говорите так, чтобы вас слушали',
+    date:'2026-10-07', time:'13:00', venue:'Центр «Мой бизнес»',
+    address:'улица Ленина, 68', kind:'Тренинг / коммуникации / управление', price:'По регистрации',
+    desc:'Тренинг для руководителей и предпринимателей по деловой коммуникации и работе с голосом.',
+    url:'https://msppk.ru/events/golos-rukovoditelya-govorite-tak-chtoby-vas-slushali/'
   },
   {
     id:'kommersant-retail-2026-10-08',

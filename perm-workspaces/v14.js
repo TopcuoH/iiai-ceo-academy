@@ -1,4 +1,5 @@
 const CATALOG_REVIEW_DATE_20260913='2026-09-13';
+const CATALOG_REVIEW_DATE_20260920='2026-09-20';
 
 function applyVerifiedCatalogUpdates20260913(){
   const boilingPerm=places.find(p=>p.name==='Точка кипения — Пермь');
@@ -14,7 +15,7 @@ function applyVerifiedCatalogUpdates20260913(){
 
   const les=places.find(p=>p.name==='Антикафе «Лес»');
   if(les){
-    les.checkedAt=CATALOG_REVIEW_DATE_20260913;
+    les.checkedAt=CATALOG_REVIEW_DATE_20260920;
     les.address='Советская улица, 51А/1';
     les.phone='+79027920213';
     les.phoneLabel='+7 (902) 792-02-13';
@@ -23,7 +24,7 @@ function applyVerifiedCatalogUpdates20260913(){
     les.evidence='high';
     les.payment='наличные / банковская карта / QR-код';
     les.source='https://permlive.ru/menu/places/forest_anticafe/';
-    les.desc='Антикафе и коворкинг для индивидуальной работы, встреч и небольших команд. Актуальные публикации пространства и подтверждённая владельцем карточка Яндекс Карт указывают адрес Советская, 51А/1, телефон, Wi‑Fi и режим 13:00–23:00. Оплата доступна наличными, банковской картой и по QR-коду; текущий тариф за время перед визитом лучше уточнить.';
+    les.desc='Антикафе и коворкинг для индивидуальной работы, встреч и небольших команд. Свежие публикации пространства от 17 сентября 2026 года подтверждают актуальный адрес Советская, 51А/1, телефон и режим 13:00–23:00. Wi‑Fi и способы оплаты ранее подтверждены владельцем и картами; текущий тариф за время перед визитом лучше уточнить.';
   }
 }
 

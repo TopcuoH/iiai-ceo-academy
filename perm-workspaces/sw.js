@@ -1,4 +1,4 @@
-const CACHE='perm-work-v19-20260921';
+const CACHE='perm-work-v20-20260922';
 const CORE=['./','./index.html','./styles.css','./v2.css','./v3.css','./v4.css','./data.js','./events.js','./app.js','./v2.js','./v2-fix.js','./v3.js','./v4.js','./v5.js','./v6.js','./v7.js','./v8.js','./v9.js','./v10.js','./v11.js','./v12.js','./v13.js','./v14.js','./v15.js','./v16.js','./v17.js','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});

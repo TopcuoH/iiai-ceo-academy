@@ -27,7 +27,7 @@ const CATALOG_REVIEW_DATE_20260907='2026-09-07';
 function applyVerifiedCatalogUpdates20260907(){
   const gorky=places.find(p=>p.name==='Пермская краевая библиотека им. А. М. Горького');
   if(gorky){
-    gorky.checkedAt=CATALOG_REVIEW_DATE_20260907;
+    gorky.checkedAt='2026-09-23';
     gorky.phone='+73422362085';
     gorky.phoneLabel='+7 (342) 236-20-85';
     gorky.hours='пн–чт 10:00–21:00; пт–вс 10:00–17:00; последний четверг месяца — санитарный день';

@@ -1,6 +1,7 @@
 const CATALOG_REVIEW_DATE_20260918='2026-09-18';
 const CATALOG_REVIEW_DATE_20260921='2026-09-21';
 const CATALOG_REVIEW_DATE_20260922='2026-09-22';
+const CATALOG_REVIEW_DATE_20260924='2026-09-24';
 
 function applyVerifiedCatalogUpdates20260918(){
   const boilingPerm=places.find(p=>p.name==='Точка кипения — Пермь');
@@ -56,6 +57,19 @@ function applyVerifiedCatalogUpdates20260922(){
   }
 }
 
+function applyVerifiedCatalogUpdates20260924(){
+  const mitten=places.find(p=>p.name==='Mitten Coffee');
+  if(!mitten)return;
+  mitten.checkedAt=CATALOG_REVIEW_DATE_20260924;
+  mitten.address='улица Советской Армии, 7';
+  mitten.phone='+79223084555';
+  mitten.phoneLabel='+7 (922) 308-45-55';
+  mitten.evidence='high';
+  mitten.hours='ежедневно; точный график требует уточнения — актуальные карты расходятся по времени открытия и закрытия';
+  mitten.source='https://yandex.com/maps/org/mitten/206152596083/';
+  mitten.desc='Камерная кофейня на Советской Армии, 7. Актуальные карты подтверждают адрес и телефон; 2ГИС и профильные справочники указывают Wi‑Fi и возможность работать с ноутбуком, а Яндекс Карты — возможность зарядить устройство. Наличие розеток у конкретного стола и точный график лучше уточнить перед длительной рабочей сессией, поскольку источники по часам работы расходятся.';
+}
+
 function deduplicatePermEvents20260918(){
   if(typeof permEvents==='undefined')return;
   const seen=new Set();
@@ -68,21 +82,22 @@ function deduplicatePermEvents20260918(){
   permEvents.splice(0,permEvents.length,...unique);
 }
 
-function updateCatalogRevisionStamp20260922(){
+function updateCatalogRevisionStamp20260924(){
   const footer=document.querySelector('footer');
-  if(footer)footer.innerHTML=footer.innerHTML.replace(/Последняя базовая ревизия:\s*\d{1,2}\s+[а-яё]+\s+2026\s+г\./i,'Последняя базовая ревизия: 22 сентября 2026 г.');
+  if(footer)footer.innerHTML=footer.innerHTML.replace(/Последняя базовая ревизия:\s*\d{1,2}\s+[а-яё]+\s+2026\s+г\./i,'Последняя базовая ревизия: 24 сентября 2026 г.');
 }
 
 applyVerifiedCatalogUpdates20260918();
 applyVerifiedCatalogUpdates20260921();
 applyVerifiedCatalogUpdates20260922();
+applyVerifiedCatalogUpdates20260924();
 deduplicatePermEvents20260918();
 if(document.readyState==='loading'){
   document.addEventListener('DOMContentLoaded',()=>{
     deduplicatePermEvents20260918();
-    updateCatalogRevisionStamp20260922();
+    updateCatalogRevisionStamp20260924();
   },{once:true});
 }else{
-  updateCatalogRevisionStamp20260922();
+  updateCatalogRevisionStamp20260924();
 }
 setTimeout(deduplicatePermEvents20260918,800);
